@@ -5,7 +5,7 @@ import warnings
 
 warnings.filterwarnings('ignore')
 
-with open('..//model/model_v1.pkl', 'rb') as f:
+with open('model_v1.pkl', 'rb') as f:
     loaded_model = pickle.load(f)
 
 def predict_loan_approval(age, annual_income, credit_score, employment_years, loan_amount_requested):
