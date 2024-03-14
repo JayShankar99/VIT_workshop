@@ -26,17 +26,16 @@ st.set_page_config(page_title="VIT", layout='wide')
 # Streamlit app
 def main():
     st.title('Loan Approval Prediction App')
-    st.sidebar.title('Loan Approval Prediction')
 
     # Input fields
-    age = st.sidebar.number_input('Age', min_value=18, max_value=100)
-    annual_income = st.sidebar.number_input('Annual Income')
-    credit_score = st.sidebar.number_input('Credit Score')
-    employment_years = st.sidebar.number_input('Employment Years', min_value=0, max_value=50)
-    loan_amount_requested = st.sidebar.number_input('Loan Amount Requested')
+    age = st.number_input('Age', min_value=18, max_value=100)
+    annual_income = st.number_input('Annual Income')
+    credit_score = st.number_input('Credit Score')
+    employment_years = st.number_input('Employment Years', min_value=0, max_value=50)
+    loan_amount_requested = st.number_input('Loan Amount Requested')
 
     # Predict button
-    if st.sidebar.button('Predict'):
+    if st.button('Predict'):
         prediction = predict_loan_approval(age, annual_income, credit_score, employment_years, loan_amount_requested)
         if prediction != 'No':
             st.header('Loan Approved')
@@ -45,4 +44,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
